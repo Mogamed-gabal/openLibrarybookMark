@@ -60,7 +60,7 @@ td
     box-sizing: border-box;
     animation: rotation 1s linear infinite;
   }
-  
+ 
   @keyframes rotation {
     0% {
       transform: rotate(0deg);
@@ -69,3 +69,34 @@ td
       transform: rotate(360deg);
     }
   } 
+  /* medaiQuery */
+
+  @media screen and (max-width:670px) {
+    .row
+    {
+      width: 120%;
+    }
+    tbody
+    {
+      transform: translate(-68px, 10px);
+    }
+    .data
+    {
+      width: 100%;
+    }
+    .container
+    {
+      width: 100%;
+    }
+    table
+    {
+      width: 100%;
+    }
+    .year
+    {
+      transform: translateX(119px);
+    }
+    .auth{
+      transform: translateX(106px);
+    }
+  }
