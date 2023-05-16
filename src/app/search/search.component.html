@@ -1,0 +1,53 @@
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.9)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white"> <span class="loader"></span></p>
+</ngx-spinner>
+
+<div class="container w-75 m-auto">
+    <div class="search-bar text-center w-50 m-auto p-4 position-relative">
+        <!-- tow way data binding -->
+        <input [(ngModel)]="searchTerm" type="text" class="form-control">
+        <button class="searchIcon btn btn-primary" (click)="onSearch()">
+            <span *ngIf="!isLoading">Search</span>
+            <span *ngIf="isLoading" class=""><i class="fas fa-spinner fa-spin"></i></span>
+
+        </button>
+        
+    </div> 
+    <div *ngIf="results" class="row p-5 bg-light my-2 d-flex justify-content-center align-items-center">
+            <div class="col-md-12">
+                <div class="data border-1 p-2">
+                    <table class="w-100">
+                        <tbody class=" w-100">
+                            <thead class=" w-100 d-flex justify-content-between">
+                                <th>Title and subtite</th>
+                                <th class="auth">Author</th>
+                                <th class="year">first publisher Year</th>
+                            </thead>
+                            <tr class=" " *ngFor="let book of searchResult">
+                                <td class="pt-4 bookTitle">{{book.title}}</td>
+                                <td>{{book.author_name}}</td>
+                                <td>{{book.first_publish_year}}</td>
+                            </tr>
+                        </tbody>
+                            
+                    </table>
+                </div>
+                
+            </div>
+    </div>
+    <div *ngIf="results" class="containser w-75 m-auto position-fixed bottom-0 d-flex justify-content-center p-2"> 
+        <button (click)="gitLastPage()" class="next-page btn btn-secondary px-4 py2 me-2">
+               last
+             
+        </button>
+        <button (click)="gitNextPage()" class="next-page btn btn-primary px-4 py2 ms-1">
+            next
+        </button>
+        <p class="nums">{{pageLength}} of({{booksLength}})</p>
+    </div> 
+</div>

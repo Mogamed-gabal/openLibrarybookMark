@@ -1,0 +1,64 @@
+<!--loader -->
+<ngx-spinner
+  bdColor="rgba(0,0,0,0.9)"
+  size="medium"
+  color="#fff"
+  type="ball-scale-multiple"
+>
+  <p style="font-size: 20px; color: white"> <span class="loader"></span></p>
+</ngx-spinner>
+<div class="home-page w-100 ">
+    <div class="row w-100 m-0 ">
+        <!-- sideNAV -->
+    <div class="col-md-3 bg-light ">
+                <div class="side-nav h-100 ">
+                <h3 class="px-3">Trending Subjects</h3>
+                <ul class=" list-unstyled px-3">
+                <li class=" py-3">
+                <a routerLink="/search">Search</a>
+                </li>
+                <li class=" py-3">
+                <a routerLink="/JavaScript">Java Script</a>
+                </li>
+                    
+                <li class=" py-3">
+                <a routerLink="/Html">Html</a>
+                </li>
+                    
+                <li class=" py-3">
+                <a routerLink="/Css"> Css</a>
+                </li>
+                    
+                <li class=" py-3">
+                <a routerLink="/HarryPoter">Harry Poter</a>
+                </li>
+                    
+                <li class=" py-3">
+                <a routerLink="/Crypto">Crypto</a>
+                </li>
+                </ul>
+                </div>
+    </div>
+        <!-- body-box -->
+    <div class="col-md-9 m-0 p-0 ">
+                    <div class="search-continer w-100 py-5 m-0 px-3 position-relative">
+                    <span class="booksNumber">All({{booksLength}})</span>
+                    <table class=" w-100  ">
+                    <thead class="  w-100">
+                    <th>title</th>
+                    <th >Year Of Publications</th>
+                    </thead>
+                    <tbody>
+                    <tr class="tr" *ngFor="let book of books"  >
+                    <td >{{book.title}}</td>
+                    <td >{{book.first_publish_year}}</td>
+                    <td>{{book.author_name}}</td>
+                    </tr>
+                    </tbody>
+                
+               </table>
+            </div>
+    </div>
+    </div>
+
+</div> 
